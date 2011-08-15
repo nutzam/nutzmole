@@ -13,21 +13,22 @@ import freemarker.template.Template;
 
 public class FreemarkerHelp {
 
-	public static final void make(String path, String templateName, Map<String, Object> datas){
+	public static final void make(String path, String templateName, Map<String, Object> datas) {
 		try {
 			Files.createNewFile(new File(path));
-			
-			Configuration cfg = new Configuration(); 
+
+			Configuration cfg = new Configuration();
 			cfg.setDirectoryForTemplateLoading(new File("./templates"));
 			cfg.setObjectWrapper(new DefaultObjectWrapper());
-			
+
 			Template template = cfg.getTemplate(templateName);
-			Writer out = new FileWriter(path); 
-			template.process(datas, out); 
+			Writer out = new FileWriter(path);
+			template.process(datas, out);
 			out.flush();
 			out.close();
-		} catch (Throwable e) {
+		}
+		catch (Throwable e) {
 			e.printStackTrace();
-		} 
+		}
 	}
 }
