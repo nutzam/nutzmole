@@ -7,18 +7,20 @@ import java.util.List;
 import java.util.Map;
 
 import org.nutz.lang.Files;
+import org.nutz.mole.Creator;
+import org.nutz.mole.MoleContext;
 import org.nutz.mole.mapping.ZTable;
 
-public class HelpFileCreater {
+public class HelpFileCreater implements Creator {
 
 	/**
 	 * 创建web.xml
 	 * 创建dao.js
 	 * 创建index.html
-	 * @param config
-	 * @param tables
 	 */
-	public void create (ConfigPool config, List<ZTable> tables){
+	public void create (MoleContext context){
+		ConfigPool config = context.getConfig();
+		List<ZTable> tables = context.getTables();
 		Map<String, Object> datas = new HashMap<String, Object>();
 		datas.put("packageName", config.project.get("packageName"));
 		FreemarkerHelp.make(config.project.getProperty("projectRoot")+"WebContent/WEB-INF/web.xml", "web.xml.ftl", datas);

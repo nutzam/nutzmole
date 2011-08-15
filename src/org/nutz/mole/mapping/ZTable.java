@@ -3,31 +3,16 @@ package org.nutz.mole.mapping;
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.Data;
+
+@Data
 public class ZTable {
 
-	public String dbTableName;
-	public String className;
-	public List<ZField> fields = new ArrayList<ZField>();
+	private String tableName;
+	private String className;
+	private List<ZField> fields = new ArrayList<ZField>();
 	
-	
-	public String getDbTableName() {
-		return dbTableName;
-	}
-	public void setDbTableName(String dbTableName) {
-		this.dbTableName = dbTableName;
-	}
-	public String getClassName() {
-		return className;
-	}
-	public void setClassName(String className) {
-		this.className = className;
-	}
-	public List<ZField> getFields() {
-		return fields;
-	}
-	public void setFields(List<ZField> fields) {
-		this.fields = fields;
-	}
-	
-	
+	//其他信息
+	private String comment;
+	private String catalog;
 }

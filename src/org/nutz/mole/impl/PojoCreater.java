@@ -1,20 +1,21 @@
 package org.nutz.mole.impl;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
+import org.nutz.mole.Creator;
+import org.nutz.mole.MoleContext;
 import org.nutz.mole.mapping.ZTable;
 
-public class PojoCreater {
+public class PojoCreater implements Creator {
 
-	public void create (ConfigPool config, List<ZTable> tables){
-		String pathRoot = config.project.getProperty("srcFileRoot")+"bean/";
+	public void create (MoleContext context){
+		String pathRoot = context.getConfig().project.getProperty("srcFileRoot")+"bean/";
 		Map<String, Object> datas = new HashMap<String, Object>();
-		datas.put("packageName", config.project.get("packageName"));
-		for (ZTable zTable : tables) {
+		datas.put("packageName", context.getConfig().project.get("packageName"));
+		for (ZTable zTable : context.getTables()) {
 			datas.put("zTable", zTable);
-			FreemarkerHelp.make(pathRoot+zTable.className+".java", "POJO.ftl", datas);
+			FreemarkerHelp.make(pathRoot+zTable.getClassName()+".java", "POJO.ftl", datas);
 		}
 	}
 }

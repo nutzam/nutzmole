@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="src" path="conf"/>
+	<classpathentry kind="lib" path="lib/freemarker_2.3.11.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="lib/junit-4.3.1.jar"/>
+	<classpathentry kind="lib" path="lib/lombok.jar"/>
+	<classpathentry kind="lib" path="lib/commons-dbcp-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-pool-1.5.4.jar"/>
+	<classpathentry kind="lib" path="lib/h2-1.3.154.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.7-bin.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Nutz2"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
