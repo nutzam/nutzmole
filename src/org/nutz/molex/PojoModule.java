@@ -12,7 +12,7 @@ import org.nutz.mvc.annotation.Param;
 import org.nutz.service.EntityService;
 
 @InjectName
-@IocBean(field={"dao"})
+@IocBean(fields={"dao"})
 @At("/pojo")
 public class PojoModule extends EntityService<Pojo>{
 	
