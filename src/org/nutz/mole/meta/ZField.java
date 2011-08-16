@@ -1,4 +1,4 @@
-package org.nutz.mole.mapping;
+package org.nutz.mole.meta;
 
 import lombok.Data;
 

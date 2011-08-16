@@ -5,7 +5,13 @@ import org.nutz.dao.entity.annotation.Id;
 import org.nutz.dao.entity.annotation.Name;
 import org.nutz.dao.entity.annotation.Table;
 
-@Table("${zTable.dbTableName}")
+import lombok.Data;
+
+/**
+* ${zTable.comment}
+*/
+@Data
+@Table("${zTable.tableName}")
 public class ${zTable.className} {
 
 	<#list zTable.fields as zField>
@@ -20,21 +26,5 @@ public class ${zTable.className} {
 		</#if>
 	@Column("${zField.dbFieldName}")
 	private ${zField.classTypeName} ${zField.fieldName};
-	</#list>
-	
-	//getter setter
-	<#list zTable.fields as zField>
-		<#if zField.classTypeName != "boolean">
-	public ${zField.classTypeName} get${zField.fieldName?cap_first}() {
-		return ${zField.fieldName};
-	}
-		<#else>
-	public ${zField.classTypeName} is${zField.fieldName?cap_first}() {
-		return ${zField.fieldName};
-	}
-		</#if>
-	public void set${zField.fieldName?cap_first}(${zField.classTypeName} ${zField.fieldName}) {
-		this.${zField.fieldName} = ${zField.fieldName};
-	}
 	</#list>
 }

@@ -14,12 +14,17 @@ import org.nutz.mvc.annotation.At;
 import org.nutz.mvc.annotation.Param;
 import org.nutz.service.EntityService;
 
+import org.nutz.log.Log;
+import org.nutz.log.Logs;
+
 import ${packageName}.bean.${zTable.className};
 
 @At("/${zTable.className?lower_case}")
 @InjectName
 @IocBean(field={"dao"})
 public class ${zTable.className}Module extends EntityService<${zTable.className}>{
+
+    private static final Log log = Logs.get();
 	
 	@At
 	public Object list(@Param("page") int page ,@Param("rows") int rows){

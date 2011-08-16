@@ -1,4 +1,4 @@
-package org.nutz.mole.mapping;
+package org.nutz.mole.meta;
 
 import java.util.ArrayList;
 import java.util.List;

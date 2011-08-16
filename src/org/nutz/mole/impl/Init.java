@@ -3,6 +3,7 @@ package org.nutz.mole.impl;
 import java.io.File;
 
 import org.nutz.lang.Files;
+import org.nutz.mole.ConfigPool;
 
 public class Init {
 
@@ -12,9 +13,9 @@ public class Init {
 	 * @param config
 	 */
 	public void init(ConfigPool config) {
-		String projectName = config.project.getProperty("projectName");
+		String projectName = config.getProject().get("projectName");
 		// String packageName = config.project.getProperty("packageName");
-		String output = config.project.getProperty("output", "output/");
+		String output = config.getProject().get("output", "output/");
 		if (!output.endsWith("/"))
 			output += "/";
 		System.out.println(output);

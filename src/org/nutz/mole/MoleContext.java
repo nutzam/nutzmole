@@ -3,8 +3,7 @@ package org.nutz.mole;
 import java.util.List;
 
 import org.nutz.lang.util.SimpleContext;
-import org.nutz.mole.impl.ConfigPool;
-import org.nutz.mole.mapping.ZTable;
+import org.nutz.mole.meta.ZTable;
 
 @SuppressWarnings("unchecked")
 public class MoleContext extends SimpleContext {
@@ -13,6 +12,12 @@ public class MoleContext extends SimpleContext {
 
 	public MoleContext() {
 		config = new ConfigPool();
+		try {
+			config.load();
+		}
+		catch (Throwable e) {
+			e.printStackTrace();
+		}
 	}
 
 	public List<ZTable> getTables() {
