@@ -8,7 +8,7 @@ import org.nutz.dao.entity.annotation.Table;
 import lombok.Data;
 
 /**
-* ${zTable.comment}
+* ${zTable.comment!""}
 */
 @Data
 @Table("${zTable.tableName}")

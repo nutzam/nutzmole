@@ -14,12 +14,17 @@ import org.nutz.mvc.annotation.At;
 import org.nutz.mvc.annotation.Param;
 import org.nutz.service.EntityService;
 
+import org.nutz.log.Log;
+import org.nutz.log.Logs;
+
 import net.wendal.nutz.bean.Test;
 
 @At("/test")
 @InjectName
-@IocBean(field={"dao"})
+@IocBean(fields={"dao"})
 public class TestModule extends EntityService<Test>{
+
+    private static final Log log = Logs.get();
 	
 	@At
 	public Object list(@Param("page") int page ,@Param("rows") int rows){

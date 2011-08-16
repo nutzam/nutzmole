@@ -21,7 +21,7 @@ import ${packageName}.bean.${zTable.className};
 
 @At("/${zTable.className?lower_case}")
 @InjectName
-@IocBean(field={"dao"})
+@IocBean(fields={"dao"})
 public class ${zTable.className}Module extends EntityService<${zTable.className}>{
 
     private static final Log log = Logs.get();

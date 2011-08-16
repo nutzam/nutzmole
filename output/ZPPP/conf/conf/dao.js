@@ -1,5 +1,4 @@
 var ioc = {
-	/*定义数据源*/
 	dataSource : {
 		type :"org.apache.commons.dbcp.BasicDataSource",
 		events : {
@@ -17,7 +16,6 @@ var ioc = {
 			validationQuery : "select 1"
 		}
 	},
-    /*定义NutDao*/
     dao : {
         type : "org.nutz.dao.impl.NutDao",
         fields : {

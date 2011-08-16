@@ -1,6 +1,5 @@
 package org.nutz.mole;
 
-import org.nutz.json.Json;
 import org.nutz.mole.impl.GenerallyDatabaseAdaptor;
 import org.nutz.mole.impl.Init;
 
@@ -14,7 +13,7 @@ public class ZMole {
 		// 获取数据库表结构,构建DTable
 		DatabaseAdaptor adaptor = new GenerallyDatabaseAdaptor();
 		context = adaptor.fromDb(context);
-		System.out.println(Json.toJson(context));
+		//System.out.println(Json.toJson(context));
 		adaptor.toTarget(context);
 	}
 
