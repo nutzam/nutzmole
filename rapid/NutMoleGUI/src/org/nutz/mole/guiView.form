@@ -28,9 +28,9 @@
                                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace pref="135" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jTextField1" alignment="0" pref="198" max="32767" attributes="1"/>
-                                      <Component id="jTextField2" alignment="0" max="32767" attributes="1"/>
-                                      <Component id="jTextField3" alignment="0" max="32767" attributes="1"/>
+                                      <Component id="basepackage" alignment="0" pref="198" max="32767" attributes="1"/>
+                                      <Component id="outRoot" alignment="0" max="32767" attributes="1"/>
+                                      <Component id="tableRemovePrefixes" alignment="0" max="32767" attributes="1"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -48,13 +48,12 @@
                           </Group>
                           <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextField10" pref="196" max="32767" attributes="1"/>
-                              <Component id="jTextField9" alignment="0" pref="196" max="32767" attributes="1"/>
-                              <Component id="jTextField4" alignment="0" pref="196" max="32767" attributes="0"/>
-                              <Component id="jTextField5" alignment="0" pref="196" max="32767" attributes="0"/>
-                              <Component id="jTextField6" alignment="0" pref="196" max="32767" attributes="0"/>
-                              <Component id="jTextField7" alignment="0" pref="196" max="32767" attributes="0"/>
-                              <Component id="jTextField8" alignment="0" pref="196" max="32767" attributes="0"/>
+                              <Component id="jdbc_catalog" pref="196" max="32767" attributes="1"/>
+                              <Component id="jdbc_schema" alignment="0" pref="196" max="32767" attributes="1"/>
+                              <Component id="jdbc_url" alignment="0" pref="196" max="32767" attributes="0"/>
+                              <Component id="jdbc_driver" alignment="0" pref="196" max="32767" attributes="0"/>
+                              <Component id="jdbc_username" alignment="0" pref="196" max="32767" attributes="0"/>
+                              <Component id="jdbc_password" alignment="0" pref="196" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace pref="32" max="-2" attributes="0"/>
                       </Group>
@@ -73,58 +72,55 @@
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="basepackage" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="outRoot" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tableRemovePrefixes" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                   <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jdbc_url" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jdbc_driver" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jdbc_username" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jdbc_password" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField9" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jdbc_schema" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jdbc_catalog" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="16" max="32767" attributes="0"/>
+                  <EmptySpace pref="22" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -136,10 +132,10 @@
             <Property name="name" type="java.lang.String" value="jLabel1" noResource="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="basepackage">
           <Properties>
             <Property name="text" type="java.lang.String" resourceKey="jTextField1.text"/>
-            <Property name="name" type="java.lang.String" value="jTextField1" noResource="true"/>
+            <Property name="name" type="java.lang.String" value="basepackage" noResource="true"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
@@ -201,60 +197,54 @@
             <Property name="name" type="java.lang.String" value="jLabel10" noResource="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField2">
+        <Component class="javax.swing.JTextField" name="outRoot">
           <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="jTextField2.text"/>
-            <Property name="name" type="java.lang.String" value="jTextField2" noResource="true"/>
+            <Property name="text" type="java.lang.String" resourceKey="outRoot.text"/>
+            <Property name="name" type="java.lang.String" value="outRoot" noResource="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField3">
+        <Component class="javax.swing.JTextField" name="tableRemovePrefixes">
           <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="jTextField3.text"/>
-            <Property name="name" type="java.lang.String" value="jTextField3" noResource="true"/>
+            <Property name="text" type="java.lang.String" resourceKey="tableRemovePrefixes.text"/>
+            <Property name="name" type="java.lang.String" value="tableRemovePrefixes" noResource="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField4">
+        <Component class="javax.swing.JTextField" name="jdbc_url">
           <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="jTextField4.text"/>
-            <Property name="name" type="java.lang.String" value="jTextField4" noResource="true"/>
+            <Property name="text" type="java.lang.String" resourceKey="jdbc_url.text"/>
+            <Property name="name" type="java.lang.String" value="jdbc_url" noResource="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField5">
+        <Component class="javax.swing.JTextField" name="jdbc_driver">
           <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="jTextField5.text"/>
-            <Property name="name" type="java.lang.String" value="jTextField5" noResource="true"/>
+            <Property name="text" type="java.lang.String" resourceKey="jdbc_driver.text"/>
+            <Property name="name" type="java.lang.String" value="jdbc_driver" noResource="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField6">
+        <Component class="javax.swing.JTextField" name="jdbc_username">
           <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="jTextField6.text"/>
-            <Property name="name" type="java.lang.String" value="jTextField6" noResource="true"/>
+            <Property name="text" type="java.lang.String" resourceKey="jdbc_username.text"/>
+            <Property name="name" type="java.lang.String" value="jdbc_username" noResource="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField7">
+        <Component class="javax.swing.JTextField" name="jdbc_password">
           <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="jTextField7.text"/>
-            <Property name="name" type="java.lang.String" value="jTextField7" noResource="true"/>
+            <Property name="text" type="java.lang.String" resourceKey="jdbc_password.text"/>
+            <Property name="name" type="java.lang.String" value="jdbc_password" noResource="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField8">
+        <Component class="javax.swing.JTextField" name="jdbc_schema">
           <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="jTextField8.text"/>
-            <Property name="name" type="java.lang.String" value="jTextField8" noResource="true"/>
+            <Property name="text" type="java.lang.String" resourceKey="jdbc_schema.text"/>
+            <Property name="toolTipText" type="java.lang.String" resourceKey="jdbc_schema.toolTipText"/>
+            <Property name="name" type="java.lang.String" value="jdbc_schema" noResource="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField9">
+        <Component class="javax.swing.JTextField" name="jdbc_catalog">
           <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="jTextField9.text"/>
-            <Property name="toolTipText" type="java.lang.String" resourceKey="jTextField9.toolTipText"/>
-            <Property name="name" type="java.lang.String" value="jTextField9" noResource="true"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField10">
-          <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="jTextField10.text"/>
-            <Property name="toolTipText" type="java.lang.String" resourceKey="jTextField10.toolTipText"/>
-            <Property name="name" type="java.lang.String" value="jTextField10" noResource="true"/>
+            <Property name="text" type="java.lang.String" resourceKey="jdbc_catalog.text"/>
+            <Property name="toolTipText" type="java.lang.String" resourceKey="jdbc_catalog.toolTipText"/>
+            <Property name="name" type="java.lang.String" value="jdbc_catalog" noResource="true"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
@@ -262,6 +252,9 @@
             <Property name="text" type="java.lang.String" resourceKey="jButton1.text"/>
             <Property name="name" type="java.lang.String" value="jButton1" noResource="true"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
