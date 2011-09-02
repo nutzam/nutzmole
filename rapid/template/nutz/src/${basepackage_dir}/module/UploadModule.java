@@ -19,7 +19,6 @@ import org.nutz.mvc.upload.TempFile;
 
 
 @IocBean
-@InjectName
 public class UploadModule {
 
 	private static final Log log = Logs.get();

@@ -1,0 +1,2 @@
+1. 运行rapid-gen.bat用于再输入gen *用于生成测试代码
+2. 主要配置文件为generator.xml,里面可以修改数据库连接

@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.nutz.dao.pager.Pager;
-import org.nutz.ioc.annotation.InjectName;
 import org.nutz.ioc.loader.annotation.IocBean;
 import org.nutz.json.Json;
 import org.nutz.mvc.annotation.At;
@@ -20,7 +19,6 @@ import org.nutz.log.Logs;
 import ${basepackage}.bean.${table.className};
 
 @At("/${table.className}")
-@InjectName
 @IocBean(fields={"dao"})
 public class ${table.className}Module extends EntityService<${table.className}>{
 
@@ -42,7 +40,7 @@ public class ${table.className}Module extends EntityService<${table.className}>{
 	}
 	
 	@At
-	public boolean add(@Param("::") ${table.className} obj){
+	public boolean add(@Param("..") ${table.className} obj){
 		try{
 			dao().insert(obj);
 			return true;
@@ -54,7 +52,7 @@ public class ${table.className}Module extends EntityService<${table.className}>{
 	}
 	
 	@At
-	public boolean delete(@Param("::") ${table.className} obj){
+	public boolean delete(@Param("..") ${table.className} obj){
 		try{
 			dao().delete(obj);
 			return true;
@@ -66,7 +64,7 @@ public class ${table.className}Module extends EntityService<${table.className}>{
 	}
 	
 	@At
-	public boolean update(@Param("::") ${table.className} obj){
+	public boolean update(@Param("..") ${table.className} obj){
 		try{
 			dao().update(obj);
 			return true;

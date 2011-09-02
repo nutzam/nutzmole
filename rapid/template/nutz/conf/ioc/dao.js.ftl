@@ -11,9 +11,16 @@ var ioc = {
 			password        : '${jdbc_password}',
 			initialSize     : 10,
 			maxActive       : 100,
-			testOnReturn    : true,
+			minIdle         : 10,
+			maxIdle         : 20,
+			defaultAutoCommit: false,
+			
 			//validationQueryTimeout : 5,
+			<#if jdbc_url?starts_with('jdbc:oracle:')>
+			validationQuery : "select 1 from dual"
+			<#else>
 			validationQuery : "select 1"
+			</#if>
 		}
 	},
     dao : {
