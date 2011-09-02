@@ -17,6 +17,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.lang.reflect.Field;
 import java.util.Properties;
 import javax.swing.Timer;
@@ -131,6 +132,11 @@ public class guiView extends FrameView {
                     Logger.getLogger(guiView.class.getName()).log(Level.SEVERE, null, ex);
                 }
           } 
+        }
+        try {
+            p.storeToXML(new FileOutputStream("generator.xml"), null);
+        } catch (Exception ex) {
+            Logger.getLogger(guiView.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
