@@ -1,1 +1,5 @@
 /bin
+output/
+test.h2.db
+test.trace.db
+output.log

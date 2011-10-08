@@ -13,8 +13,14 @@ public class ZMole {
 		// 获取数据库表结构,构建DTable
 		DatabaseAdaptor adaptor = new GenerallyDatabaseAdaptor();
 		context = adaptor.fromDb(context);
+		if(context!=null)
+		{
 		//System.out.println(Json.toJson(context));
-		adaptor.toTarget(context);
+			adaptor.toTarget(context);
+		}else
+		{
+			System.out.println("请检查数据库连接或者数据库是否有表");
+		}
 	}
 
 }

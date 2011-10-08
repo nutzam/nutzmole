@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -32,74 +33,83 @@ public class GenerallyDatabaseAdaptor implements DatabaseAdaptor {
 			connection = DriverManager.getConnection(	config.getProject().get("db_url"),
 														config.getProject().get("db_username"),
 														config.getProject().get("db_password"));
-			connection.setReadOnly(true);
-			//获取数据库的元数据
-			DatabaseMetaData metaData = connection.getMetaData();
-			ResultSet tableResultset = metaData.getTables(	null,
-															null,
-															null,
-															new String[]{"TABLE"});
-			//开始遍历全部结果(即全部表)
-			List<ZTable> tables = new ArrayList<ZTable>(10);
-			while (tableResultset.next()) {
-				ZTable zTable = new ZTable();
-				tables.add(zTable);
-				zTable.setTableName(tableResultset.getString("TABLE_NAME"));
-				//查询表名-->类名映射
-				zTable.setClassName(config.getTableMapping().get(zTable.getTableName()));
-				if (zTable.getClassName() == null) {
-					zTable.setClassName(toName(zTable.getTableName()));
+				if(connection==null || connection.isClosed())
+				{	
+					return null;
 				}
-				zTable.setComment(tableResultset.getString("REMARKS"));
-			}
-			//把信息打印一下,这样用户比较清晰
-			if(log.isInfoEnabled())
-				log.infof("Load %d tables", tables.size());
-			if(log.isDebugEnabled())
-				log.debug("Tables:\n"+Json.toJson(tables));
-			//好了,开始找字段
-			for (ZTable zTable : tables) {
-				//先来找找主键
-				Set<String> pks = new HashSet<String>();
-				ResultSet pkResultSet = metaData.getPrimaryKeys(null, null, zTable.getTableName());
-				while (pkResultSet.next()) {
-					pks.add(pkResultSet.getString("COLUMN_NAME"));
-				}
-
-				ResultSet columnResultset = metaData.getColumns(null,
+				connection.setReadOnly(true);
+				//获取数据库的元数据
+				DatabaseMetaData metaData = connection.getMetaData();
+				ResultSet tableResultset = metaData.getTables(	null,
 																null,
-																zTable.getTableName(),
-																null);
-				while (columnResultset.next()) {
-					ZField zField = new ZField();
-					zField.dbFieldName = columnResultset.getString("COLUMN_NAME");
-					zField.notNull = "NO".equals(columnResultset.getString("IS_NULLABLE"));
-					zField.dbFieldType = columnResultset.getString("TYPE_NAME");
-					zField.fieldName = config.getTableFieldMapping().get(zTable.getTableName()
-																			+ "."
-																			+ zField.dbFieldName);
-					if (zField.fieldName == null)
-						zField.fieldName = config.getTableFieldMapping().get("*."
-																				+ zField.dbFieldName);
-					if (zField.fieldName == null)
-						zField.fieldName = Strings.lowerFirst(toName(zField.dbFieldName));
-					if (pks.contains(zField.dbFieldName))
-						zField.primaryKey = true;
-
-					// 推断字段的Java类型
-					zField.classTypeName = config.getTypeMapping().get(zField.dbFieldType);
-					if (zField.classTypeName == null) {
-						log.warnf(	"Unkown type_name %s.%s, skip!",
-										zTable.getTableName(),
-										zField.dbFieldName);
-						continue;
+																null,
+																new String[]{"TABLE"});
+				//开始遍历全部结果(即全部表)
+				List<ZTable> tables = new ArrayList<ZTable>(10);
+				while (tableResultset.next()) {
+					ZTable zTable = new ZTable();
+					tables.add(zTable);
+					zTable.setTableName(tableResultset.getString("TABLE_NAME"));
+					//查询表名-->类名映射
+					zTable.setClassName(config.getTableMapping().get(zTable.getTableName()));
+					if (zTable.getClassName() == null) {
+						zTable.setClassName(toName(zTable.getTableName()));
 					}
-					zTable.getFields().add(zField);
+					zTable.setComment(tableResultset.getString("REMARKS"));
 				}
-			}
-			// return tables;
-			context.setTables(tables);
-			return context;
+				//把信息打印一下,这样用户比较清晰
+				if(log.isInfoEnabled())
+					log.infof("Load %d tables", tables.size());
+				if(log.isDebugEnabled())
+					log.debug("Tables:\n"+Json.toJson(tables));
+				//好了,开始找字段
+				for (ZTable zTable : tables) {
+					//先来找找主键
+					Set<String> pks = new HashSet<String>();
+					ResultSet pkResultSet = metaData.getPrimaryKeys(null, null, zTable.getTableName());
+					while (pkResultSet.next()) {
+						pks.add(pkResultSet.getString("COLUMN_NAME"));
+					}
+
+					ResultSet columnResultset = metaData.getColumns(null,
+																	null,
+																	zTable.getTableName(),
+																	null);
+					while (columnResultset.next()) {
+						ZField zField = new ZField();
+						zField.dbFieldName = columnResultset.getString("COLUMN_NAME");
+						zField.notNull = "NO".equals(columnResultset.getString("IS_NULLABLE"));
+						zField.dbFieldType = columnResultset.getString("TYPE_NAME");
+						zField.fieldName = config.getTableFieldMapping().get(zTable.getTableName()
+																				+ "."
+																				+ zField.dbFieldName);
+						if (zField.fieldName == null)
+							zField.fieldName = config.getTableFieldMapping().get("*."
+																					+ zField.dbFieldName);
+						if (zField.fieldName == null)
+							zField.fieldName = Strings.lowerFirst(toName(zField.dbFieldName));
+						if (pks.contains(zField.dbFieldName))
+							zField.primaryKey = true;
+
+						// 推断字段的Java类型
+						zField.classTypeName = config.getTypeMapping().get(zField.dbFieldType);
+						if (zField.classTypeName == null) {
+							log.warnf(	"Unkown type_name %s.%s, skip!",
+											zTable.getTableName(),
+											zField.dbFieldName);
+							continue;
+						}
+						zTable.getFields().add(zField);
+					}
+				}
+				// return tables;
+				context.setTables(tables);
+				return context;
+			
+		}
+		catch (SQLException sqle)
+		{
+			log.warn(sqle.getMessage());
 		}
 		catch (Throwable e) {
 			e.printStackTrace();
