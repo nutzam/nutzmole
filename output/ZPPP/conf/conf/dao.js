@@ -6,9 +6,9 @@ var ioc = {
 		},
 		fields : {
 			driverClassName : 'org.h2.Driver',
-			url             : 'jdbc:h2:file:test',
-			username        : 'sa',
-			password        : '',
+			url             : 'jdbc:mysql://localhost:3306/pos?useUnicode=true&amp;characterEncoding=utf-8',
+			username        : 'pos',
+			password        : 'pos',
 			initialSize     : 10,
 			maxActive       : 100,
 			testOnReturn    : true,

@@ -13,5 +13,7 @@ public class ZField {
 	public boolean unique;
 	public boolean notNull;
 	public boolean unsign;
+	//注释
+	public String comment;
 	
 }

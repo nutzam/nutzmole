@@ -17,13 +17,22 @@ public class ${zTable.className} {
 	<#list zTable.fields as zField>
 		<#if zField.primaryKey>
 			<#if zField.classTypeName == "long" || zField.classTypeName == "int">
+	<#if zField.comment !="">
+	//${zField.comment}
+	</#if>
 	@Id
 			<#else>
 				<#if zField.classTypeName == "String">
+	<#if zField.comment !="">
+	//${zField.comment}
+	</#if>
 	@Name
 				</#if>
 			</#if>
 		</#if>
+	<#if zField.comment !="">
+	//${zField.comment}
+	</#if>
 	@Column("${zField.dbFieldName}")
 	private ${zField.classTypeName} ${zField.fieldName};
 	</#list>

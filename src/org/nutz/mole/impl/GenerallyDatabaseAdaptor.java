@@ -99,6 +99,11 @@ public class GenerallyDatabaseAdaptor implements DatabaseAdaptor {
 											zField.dbFieldName);
 							continue;
 						}
+						
+						zField.comment=columnResultset.getString("REMARKS");
+						if(zField.comment==null)
+							zField.comment="";
+						
 						zTable.getFields().add(zField);
 					}
 				}
