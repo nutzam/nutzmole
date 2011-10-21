@@ -16,7 +16,7 @@ public class ${zTable.className} {
 
 	<#list zTable.fields as zField>
 		<#if zField.primaryKey>
-			<#if zField.classTypeName == "long" || zField.classTypeName == "int">
+			<#if zField.classTypeName == "Long" || zField.classTypeName == "Integer">
 	<#if zField.comment !="">
 	//${zField.comment}
 	</#if>
