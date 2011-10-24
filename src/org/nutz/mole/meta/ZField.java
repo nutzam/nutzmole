@@ -9,7 +9,7 @@ public class ZField {
 	public String fieldName;
 	public String dbFieldType;
 	public String classTypeName;
-	public boolean primaryKey;
+	public boolean isPrimaryKey;
 	public boolean unique;
 	public boolean notNull;
 	public boolean unsign;

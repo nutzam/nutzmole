@@ -40,6 +40,7 @@ public class GenerallyDatabaseAdaptor implements DatabaseAdaptor {
 				connection.setReadOnly(true);
 				//获取数据库的元数据
 				DatabaseMetaData metaData = connection.getMetaData();
+				
 				ResultSet tableResultset = metaData.getTables(	null,
 																null,
 																null,
@@ -47,6 +48,7 @@ public class GenerallyDatabaseAdaptor implements DatabaseAdaptor {
 				//开始遍历全部结果(即全部表)
 				List<ZTable> tables = new ArrayList<ZTable>(10);
 				while (tableResultset.next()) {
+					
 					ZTable zTable = new ZTable();
 					tables.add(zTable);
 					zTable.setTableName(tableResultset.getString("TABLE_NAME"));
@@ -55,7 +57,7 @@ public class GenerallyDatabaseAdaptor implements DatabaseAdaptor {
 					if (zTable.getClassName() == null) {
 						zTable.setClassName(toName(zTable.getTableName()));
 					}
-					zTable.setComment(tableResultset.getString("REMARKS"));
+					zTable.setComment(tableResultset.getString("REMARKS"));				
 				}
 				//把信息打印一下,这样用户比较清晰
 				if(log.isInfoEnabled())
@@ -89,7 +91,7 @@ public class GenerallyDatabaseAdaptor implements DatabaseAdaptor {
 						if (zField.fieldName == null)
 							zField.fieldName = Strings.lowerFirst(toName(zField.dbFieldName));
 						if (pks.contains(zField.dbFieldName))
-							zField.primaryKey = true;
+							zField.isPrimaryKey = true;
 
 						// 推断字段的Java类型
 						zField.classTypeName = config.getTypeMapping().get(zField.dbFieldType);

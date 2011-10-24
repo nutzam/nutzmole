@@ -15,10 +15,10 @@ import lombok.Data;
 public class ${zTable.className} {
 
 	<#list zTable.fields as zField>
-		<#if zField.primaryKey>
+		<#if zField.isPrimaryKey>
 			<#if zField.classTypeName == "Long" || zField.classTypeName == "Integer">
 	<#if zField.comment !="">
-	//${zField.comment}
+	/*${zField.comment}*/
 	</#if>
 	@Id
 			<#else>
