@@ -47,4 +47,71 @@ public class MoleProject {
 		this.db_password = pp.get("db_password","sa");
 		this.db_catalog =  pp.get("db_catalog",null);
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPackageName() {
+		return packageName;
+	}
+
+	public void setPackageName(String packageName) {
+		this.packageName = packageName;
+	}
+
+	public String getOutput() {
+		return output;
+	}
+
+	public void setOutput(String output) {
+		this.output = output;
+	}
+
+	public String getDb_driver() {
+		return db_driver;
+	}
+
+	public void setDb_driver(String db_driver) {
+		this.db_driver = db_driver;
+	}
+
+	public String getDb_url() {
+		return db_url;
+	}
+
+	public void setDb_url(String db_url) {
+		this.db_url = db_url;
+	}
+
+	public String getDb_username() {
+		return db_username;
+	}
+
+	public void setDb_username(String db_username) {
+		this.db_username = db_username;
+	}
+
+	public String getDb_password() {
+		return db_password;
+	}
+
+	public void setDb_password(String db_password) {
+		this.db_password = db_password;
+	}
+
+	public String getDb_catalog() {
+		return db_catalog;
+	}
+
+	public void setDb_catalog(String db_catalog) {
+		this.db_catalog = db_catalog;
+	}
+	
+	
+	
 }

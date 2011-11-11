@@ -1,3 +1,4 @@
+/*数据源配置*/
 var ioc = {
 	dataSource : {
 		type :"org.apache.commons.dbcp.BasicDataSource",

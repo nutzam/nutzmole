@@ -34,4 +34,56 @@ public class ConfigPool {
 							+ project.get("packageName", "org.test.z").replace('.', '/')
 							+ "/");
 	}
+
+	public PropertiesProxy getProject() {
+		return project;
+	}
+
+	public void setProject(PropertiesProxy project) {
+		this.project = project;
+	}
+
+	public PropertiesProxy getTemplete() {
+		return templete;
+	}
+
+	public void setTemplete(PropertiesProxy templete) {
+		this.templete = templete;
+	}
+
+	public PropertiesProxy getTypeMapping() {
+		return typeMapping;
+	}
+
+	public void setTypeMapping(PropertiesProxy typeMapping) {
+		this.typeMapping = typeMapping;
+	}
+
+	public PropertiesProxy getTableMapping() {
+		return tableMapping;
+	}
+
+	public void setTableMapping(PropertiesProxy tableMapping) {
+		this.tableMapping = tableMapping;
+	}
+
+	public PropertiesProxy getTableFieldMapping() {
+		return tableFieldMapping;
+	}
+
+	public void setTableFieldMapping(PropertiesProxy tableFieldMapping) {
+		this.tableFieldMapping = tableFieldMapping;
+	}
+
+	public PropertiesProxy getOther() {
+		return other;
+	}
+
+	public void setOther(PropertiesProxy other) {
+		this.other = other;
+	}
+	
+	
+	
+	
 }
